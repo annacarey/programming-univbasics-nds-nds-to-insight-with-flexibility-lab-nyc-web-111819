@@ -82,7 +82,7 @@ def gross_per_studio(collection)
     studio_index = 0
     gross_per_studio = 0
     while studio_index < collection.length
-      if sutdio_state == collection[studio_index][:studio]
+      if studio_state == collection[studio_index][:studio]
         gross_per_studio += collection[studio_index][:worldwide_gross]
         pp gross_per_studio
         end 
