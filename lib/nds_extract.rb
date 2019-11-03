@@ -76,7 +76,7 @@ def gross_per_studio(collection)
   studio_hash = {}
   pp collection 
   while index < collection.length
-    pp collcetion[index][:studio]
+    pp collection[index][:studio]
     studio_state = collection[index][:studio]
     pp studio_state
     studio_index = 0
