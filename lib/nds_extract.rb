@@ -74,6 +74,7 @@ def gross_per_studio(collection)
   index = 0 
   studio_state = ""
   studio_hash = {}
+  pp collection 
   while index < collection.length
     pp collcetion[index][:studio]
     studio_state = collection[index][:studio]
@@ -84,8 +85,9 @@ def gross_per_studio(collection)
       if sutdio_state == collection[studio_index][:studio]
         gross_per_studio += collection[studio_index][:worldwide_gross]
         pp gross_per_studio
+        end 
       studio_index += 1
-    end 
+    
     end
     studio_hash[studio_state] = gross_per_studio
     pp studio_hash
@@ -105,31 +107,23 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
-  pp source
   p "hello break hi hi hi"
   index = 0
   array = []
   director_hash = {}
   while index < source.length
-    pp source[index][:name]
-    pp source[index][:movies]
-    p "break in the action"
     movie_index = 0
     director_array = []
     while movie_index < source[index][:movies].length
     
     movie_with_director_name(source[index][:name], source[index][:movies][movie_index])
     director_hash = movie_with_director_name(source[index][:name], source[index][:movies][movie_index])
-    pp director_hash
-    pp director_array
-    p "now we got this"
     director_array << director_hash
     movie_index +=1
   end 
     array << director_array
     index += 1
 end 
-pp array 
 return array 
 end
 
